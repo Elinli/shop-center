@@ -23,10 +23,16 @@ export default defineComponent({
         const router = useRouter();
         const store = useStore();
         const handleClickRedirectPlatform = ({key}) => {
-            if (key === 'platform') {
-                setupEmptyStore(store);
-                router.push('/dashboard');
+            switch (key) {
+                case 'platform':
+                    setupEmptyStore(store);
+                    router.push('/dashboard');
+                    break;
+
+                default:
+                    break;
             }
+            
         };
         const currentDate = computed(() => dayjs().format('YYYY/MM/DD'));
         return {handleClickRedirectPlatform, currentDate};
