@@ -17,7 +17,7 @@
 <script>
 import {defineComponent, onMounted, reactive} from 'vue';
 import {useStore} from 'vuex';
-import {onBeforeRouteLeave} from 'vue-router';
+import {onBeforeRouteLeave, useRoute, useRouter} from 'vue-router';
 import {MenuTree} from 'c/MenuTree';
 import {setupEmptyStore} from '@/setup/setupEmptyStore';
 import Watermark from '@/utils/watermark';
@@ -30,14 +30,16 @@ export default defineComponent({
         const title = 'E商城';
         document.title = title;
         const store = useStore();
-
+        const router = useRouter();
+        const route = useRoute();
         onBeforeRouteLeave((to, from, next) => {
-            console.log('current route', to, from, store);
+            console.log('current route', to, from, store,route,router);
             if (to.path === '/dashboard') {
                 setupEmptyStore(store);
                 Watermark.remove();
                 sessionStorage.removeItem('store');
             }
+
             next();
         });
 

@@ -10,6 +10,6 @@ export const setupApp = (App) => {
     const app = createApp(App);
     setupAntdIcon(app);
     setupAntdCmp(app);
-    app.use(store).use(router);
+    app.use(router).use(store);
     app.mount('#app');
 };

@@ -67,7 +67,7 @@ module.exports = {
             entry: 'src/main.js',
             template: 'public/index.html',
             filename: 'index.html',
-            title: 'eli'
+            title: 'Eli商城'
         }
     },
     devServer: {

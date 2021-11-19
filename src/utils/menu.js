@@ -4,6 +4,7 @@ export const staticMenuData = [
         key: '1',
         path: '/workbench',
         icon: 'WindowsOutlined',
+        name: 'workbench',
         menutype: '',
         orderNo: 0,
         meta: {
@@ -22,6 +23,7 @@ export const staticMenuData = [
             parentKey: 'root'
         },
         orderNo: 1,
+        name: 'customerManagement',
         path: '/customer-management'
     },
     {
@@ -29,6 +31,7 @@ export const staticMenuData = [
         key: '3',
         children: [],
         path: '/process-management',
+        name: 'processManagement',
         orderNo: 6,
         icon: 'FieldBinaryOutlined',
         meta: {
