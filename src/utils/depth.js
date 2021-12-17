@@ -1,5 +1,6 @@
 import {isArray, isString} from './is';
 
+// 深度扁平化
 export const depthFlatData = (depthData, flatResult=[]) => {
     let originTempData = [...depthData];
     while (originTempData.length) {
@@ -14,6 +15,7 @@ export const depthFlatData = (depthData, flatResult=[]) => {
     return flatResult;
 };
 
+// 深度查找
 export const depthErgodicityFindKey = (originData, targetKey, result = null) => {
     if (!(isArray(originData) && isString(targetKey))) return null;
     let originTempData = [...originData];
@@ -33,6 +35,7 @@ export const depthErgodicityFindKey = (originData, targetKey, result = null) => 
     return result;
 };
 
+// 深度查找所有父级
 export const depthFuncFindAllParent = (origin, target, result = []) => {
     if (!(isArray(origin) && isString(target))) return [];
     let originTempData = [...origin];
